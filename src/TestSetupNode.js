@@ -1,13 +1,13 @@
 const TreeProgram = require("treeprogram")
 
 const SwarmConstants = require("./SwarmConstants.js")
+const SetupConstructorArgNode = require("./SetupConstructorArgNode.js")
 
 class TestSetupNode extends TreeProgram.NonTerminalNode {
   createTestDummy(filepath) {
     const requiredClass = this.getRequiredClass(filepath)
-    // todo: right now we only allow 1 param. and we arent parsing it as a param node. bad!
-    const longNode = this.getNode(SwarmConstants.longParam)
-    const param = longNode ? longNode.childrenToString() : undefined
+    const constructorArgNode = this.getChildrenByNodeType(SetupConstructorArgNode)[0]
+    const param = constructorArgNode ? constructorArgNode.childrenToString() : undefined
     const isStatic = this.has(SwarmConstants.static)
     return isStatic ? requiredClass : new requiredClass(param)
   }

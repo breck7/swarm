@@ -61,6 +61,7 @@ any
  @parameters any*
  @catchAllKeyword any
 %%|
+ @parseClass ./SetupConstructorArgNode.js
  @catchAllKeyword any
 %|
  @parseClass ./CommandArgNode.js

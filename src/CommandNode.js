@@ -26,7 +26,7 @@ class CommandNode extends TreeProgram.NonTerminalNode {
 
   async execute(dummy) {
     await this._executeSwarmCommand(dummy)
-    return super.execute(dummy) // note: this might not work with closure compiler b/c of bug we found
+    return super.execute(dummy) // note: this might not work with closure compiler b/c of bug #2652
   }
 
   executeSync(dummy) {
