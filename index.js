@@ -1,1 +1,1 @@
-module.exports = require("src/SwarmProgram.js")
+module.exports = require("./src/SwarmProgram.js")

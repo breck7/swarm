@@ -17,6 +17,6 @@
   "license": "MIT",
   "dependencies": {
     "tap": "^10.7.2",
-    "treeprogram": "^8.2.0"
+    "treeprogram": "^8.2.1"
   }
 }
