@@ -57,6 +57,9 @@ assertion
 =- assertion
  @parameters any*
  @parseClass ./AssertDoesNotIncludeNode.js
+any
+ @parameters any*
+ @catchAllKeyword any
 %%|
  @catchAllKeyword any
 %|
