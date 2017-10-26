@@ -1,0 +1,64 @@
+swarm
+ @keywords
+  #!
+  #setup
+  testBlock
+ @catchAllKeyword error
+#setup
+ @parseClass ./TestSetupNode.js
+ @keywords
+  async
+  require
+  static
+  %%|
+terminal
+#! terminal
+ @parameters filepath any*
+require terminal
+ @parameters filepath
+async terminal
+static terminal
+testBlock
+ @parameters any*
+ @parseClass ./TestBlock.js
+ @keywords
+  #setup
+ @catchAllKeyword commandNode
+commandNode
+ @parseClass ./CommandNode.js
+ @parameters any*
+ @catchAllKeyword commandNode
+ @keywords
+  %|
+  assertion
+#test testBlock
++#test testBlock
+ @parseClass ./SoloTestBlock.js
+-#test testBlock
+ @parseClass ./SkippedTestBlock.js
+error
+ @parseClass ErrorNode
+assertion
+=~ assertion
+ @parameters any
+ @parseClass ./AssertTypeOfNode.js
+=# assertion
+ @parameters int
+ @parseClass ./AssertLengthNode.js
+== assertion
+ @parameters any*
+ @parseClass ./AssertEqualNode.js
+=| assertion
+ @catchAllKeyword any
+ @parseClass ./AssertEqualBlockNode.js
+=+ assertion
+ @parameters any*
+ @parseClass ./AssertIncludesNode.js
+=- assertion
+ @parameters any*
+ @parseClass ./AssertDoesNotIncludeNode.js
+%%|
+ @catchAllKeyword any
+%|
+ @parseClass ./CommandArgNode.js
+ @catchAllKeyword any

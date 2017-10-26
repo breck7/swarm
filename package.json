@@ -1,0 +1,22 @@
+{
+  "name": "swarm",
+  "version": "1.0.0",
+  "description": "A Tree Language for writing unit tests.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/breck7/swarm"
+  },
+  "keywords": [
+    "swarm"
+  ],
+  "author": "Breck Yunits",
+  "license": "MIT",
+  "dependencies": {
+    "tap": "^10.7.2",
+    "treeprogram": "^8.2.0"
+  }
+}
