@@ -1,6 +1,6 @@
 const TreeProgram = require("treeprogram")
 
-class SetupConstructorArgNode extends TreeProgram {
+class SetupConstructorArgNode extends TreeProgram.NonTerminalNode {
   executeSync() {}
 }
 
