@@ -5,7 +5,7 @@ swarm
   testBlock
  @catchAllKeyword error
 #setup
- @parseClass ./TestSetupNode.js
+ @parser js ./TestSetupNode.js
  @keywords
   async
   require
@@ -20,12 +20,12 @@ async terminal
 static terminal
 testBlock
  @columns any*
- @parseClass ./TestBlock.js
+ @parser js ./TestBlock.js
  @keywords
   #setup
  @catchAllKeyword commandNode
 commandNode
- @parseClass ./CommandNode.js
+ @parser js ./CommandNode.js
  @columns any*
  @catchAllKeyword commandNode
  @keywords
@@ -33,36 +33,36 @@ commandNode
   assertion
 #test testBlock
 +#test testBlock
- @parseClass ./SoloTestBlock.js
+ @parser js ./SoloTestBlock.js
 -#test testBlock
- @parseClass ./SkippedTestBlock.js
+ @parser js ./SkippedTestBlock.js
 error
- @parseClass ErrorNode
+ @parser js ErrorNode
 assertion
 =~ assertion
  @columns any
- @parseClass ./AssertTypeOfNode.js
+ @parser js ./AssertTypeOfNode.js
 =# assertion
  @columns int
- @parseClass ./AssertLengthNode.js
+ @parser js ./AssertLengthNode.js
 == assertion
  @columns any*
- @parseClass ./AssertEqualNode.js
+ @parser js ./AssertEqualNode.js
 =| assertion
  @catchAllKeyword any
- @parseClass ./AssertEqualBlockNode.js
+ @parser js ./AssertEqualBlockNode.js
 =+ assertion
  @columns any*
- @parseClass ./AssertIncludesNode.js
+ @parser js ./AssertIncludesNode.js
 =- assertion
  @columns any*
- @parseClass ./AssertDoesNotIncludeNode.js
+ @parser js ./AssertDoesNotIncludeNode.js
 any
  @columns any*
  @catchAllKeyword any
 %%|
- @parseClass ./SetupConstructorArgNode.js
+ @parser js ./SetupConstructorArgNode.js
  @catchAllKeyword any
 %|
- @parseClass ./CommandArgNode.js
+ @parser js ./CommandArgNode.js
  @catchAllKeyword any
