@@ -1,7 +1,5 @@
 const fs = require("fs")
-const TreeProgram = require("treeprogram")
-
-const SwarmGrammar = fs.readFileSync(__dirname + "/swarm.grammar", "utf8")
+const TreeProgram = require("/Users/breck/treeprogram/index.js")
 
 const TestSetupNode = require("./TestSetupNode.js")
 const TestBlock = require("./TestBlock.js")
@@ -9,14 +7,6 @@ const SkippedTestBlock = require("./SkippedTestBlock.js")
 const SoloTestBlock = require("./SoloTestBlock.js")
 
 class SwarmProgram extends TreeProgram {
-  getGrammarString() {
-    return SwarmGrammar
-  }
-
-  getGrammarFilePath() {
-    return __dirname + "/swarm.grammar"
-  }
-
   getCommandParent(testDummy) {
     return testDummy
   }

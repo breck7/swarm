@@ -4,6 +4,7 @@ swarm
   #setup
   testBlock
  @catchAllKeyword error
+ @parser js ./SwarmProgram.js
 #setup
  @parser js ./TestSetupNode.js
  @keywords

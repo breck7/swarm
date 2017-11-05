@@ -1,4 +1,4 @@
-const TreeProgram = require("treeprogram")
+const TreeProgram = require("/Users/breck/treeprogram/index.js")
 
 class AbstractAssertNode extends TreeProgram.NonTerminalNode {
   async execute(dummy) {

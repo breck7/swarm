@@ -1,4 +1,4 @@
-const TreeProgram = require("treeprogram")
+const TreeProgram = require("/Users/breck/treeprogram/index.js")
 
 class CommandArgNode extends TreeProgram.NonTerminalNode {
   executeSync() {}

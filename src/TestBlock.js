@@ -1,5 +1,5 @@
 const tap = require("tap")
-const TreeProgram = require("treeprogram")
+const TreeProgram = require("/Users/breck/treeprogram/index.js")
 
 const SwarmConstants = require("./SwarmConstants.js")
 

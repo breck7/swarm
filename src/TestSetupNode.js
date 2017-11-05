@@ -1,4 +1,4 @@
-const TreeProgram = require("treeprogram")
+const TreeProgram = require("/Users/breck/treeprogram/index.js")
 
 const SwarmConstants = require("./SwarmConstants.js")
 const SetupConstructorArgNode = require("./SetupConstructorArgNode.js")
@@ -23,7 +23,7 @@ class TestSetupNode extends TreeProgram.NonTerminalNode {
         .getNode(SwarmConstants.setup)
         .findBeam(SwarmConstants.require)
     if (this.isNodeJs()) return TestSetupNode.requireAbsOrRelative(requiredClass, filepath)
-    return window[TreeProgram.getClassNameFromFilePath(requiredClass)]
+    return window[TreeProgram.Utils.getClassNameFromFilePath(requiredClass)]
   }
 
   executeSync() {}
@@ -31,7 +31,7 @@ class TestSetupNode extends TreeProgram.NonTerminalNode {
   static requireAbsOrRelative(filePath, contextFilePath) {
     if (!filePath.startsWith(".")) return require(filePath)
     const path = require("path")
-    const folder = TreeProgram.getPathWithoutFileName(contextFilePath)
+    const folder = TreeProgram.Utils.getPathWithoutFileName(contextFilePath)
     const file = path.resolve(folder + "/" + filePath)
     return require(file)
   }
