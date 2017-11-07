@@ -1,9 +1,9 @@
-const TreeProgram = require("/Users/breck/treeprogram/index.js")
+const otree = require("otree")
 
 const SwarmConstants = require("./SwarmConstants.js")
 const SetupConstructorArgNode = require("./SetupConstructorArgNode.js")
 
-class TestSetupNode extends TreeProgram.NonTerminalNode {
+class TestSetupNode extends otree.NonTerminalNode {
   createTestDummy(filepath) {
     const requiredClass = this.getRequiredClass(filepath)
     const constructorArgNode = this.getChildrenByNodeType(SetupConstructorArgNode)[0]

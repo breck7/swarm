@@ -1,6 +1,6 @@
 {
   "name": "swarm-lang",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A Tree Language for writing unit tests for Javascript programs.",
   "main": "index.js",
   "scripts": {
@@ -10,11 +10,13 @@
     "type": "git",
     "url": "github.com/breck7/swarm"
   },
-  "keywords": ["swarm"],
+  "keywords": [
+    "swarm"
+  ],
   "author": "Breck Yunits",
   "license": "MIT",
   "dependencies": {
-    "tap": "^10.7.2",
-    "treeprogram": "^10.1.1"
+    "otree": "^11.2.0",
+    "tap": "^10.7.2"
   }
 }

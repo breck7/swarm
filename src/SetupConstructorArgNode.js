@@ -1,6 +1,6 @@
-const TreeProgram = require("/Users/breck/treeprogram/index.js")
+const otree = require("otree")
 
-class SetupConstructorArgNode extends TreeProgram.NonTerminalNode {
+class SetupConstructorArgNode extends otree.NonTerminalNode {
   executeSync() {}
 }
 

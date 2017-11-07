@@ -1,8 +1,8 @@
-const TreeProgram = require("/Users/breck/treeprogram/index.js")
+const otree = require("otree")
 
 const CommandArgNode = require("./CommandArgNode.js")
 
-class CommandNode extends TreeProgram.NonTerminalNode {
+class CommandNode extends otree.NonTerminalNode {
   getTestBlock() {
     return this.getParent()
   }

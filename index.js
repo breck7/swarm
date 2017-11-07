@@ -1,1 +1,1 @@
-module.exports = require("treeprogram").getProgramClassFromGrammarFile(__dirname + "/src/swarm.grammar")
+module.exports = require("otree").getParser(__dirname + "/src/swarm.grammar")

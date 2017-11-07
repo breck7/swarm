@@ -1,6 +1,6 @@
-const TreeProgram = require("/Users/breck/treeprogram/index.js")
+const otree = require("otree")
 
-class AbstractAssertNode extends TreeProgram.NonTerminalNode {
+class AbstractAssertNode extends otree.NonTerminalNode {
   async execute(dummy) {
     const finalParts = AbstractAssertNode._getMethodFromDotPath(dummy, this.getWord(1))
     const subject = finalParts[0]
