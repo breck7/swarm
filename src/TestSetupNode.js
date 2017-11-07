@@ -23,7 +23,7 @@ class TestSetupNode extends otree.NonTerminalNode {
         .getNode(SwarmConstants.setup)
         .findBeam(SwarmConstants.require)
     if (this.isNodeJs()) return TestSetupNode.requireAbsOrRelative(requiredClass, filepath)
-    return window[TreeProgram.Utils.getClassNameFromFilePath(requiredClass)]
+    return window[otree.Utils.getClassNameFromFilePath(requiredClass)]
   }
 
   executeSync() {}
@@ -31,7 +31,7 @@ class TestSetupNode extends otree.NonTerminalNode {
   static requireAbsOrRelative(filePath, contextFilePath) {
     if (!filePath.startsWith(".")) return require(filePath)
     const path = require("path")
-    const folder = TreeProgram.Utils.getPathWithoutFileName(contextFilePath)
+    const folder = otree.Utils.getPathWithoutFileName(contextFilePath)
     const file = path.resolve(folder + "/" + filePath)
     return require(file)
   }

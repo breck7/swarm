@@ -16,7 +16,7 @@
   "author": "Breck Yunits",
   "license": "MIT",
   "dependencies": {
-    "otree": "^11.2.0",
+    "otree": "^11.2.1",
     "tap": "^10.7.2"
   }
 }
