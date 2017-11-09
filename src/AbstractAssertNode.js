@@ -52,7 +52,7 @@ class AbstractAssertNode extends otree.NonTerminalNode {
   }
 
   getExpected() {
-    return this.getWords(2).join(" ")
+    return this.getWordsFrom(2).join(" ")
   }
 
   getSyncExpected() {

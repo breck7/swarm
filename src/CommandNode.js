@@ -14,7 +14,7 @@ class CommandNode extends otree.NonTerminalNode {
   _getArgs() {
     const argNodes = this.getChildrenByNodeType(CommandArgNode)
     if (argNodes.length) return argNodes.map(arg => arg.childrenToString())
-    return this.getWords(1)
+    return this.getWordsFrom(1)
   }
 
   _executeSwarmCommand(dummy) {

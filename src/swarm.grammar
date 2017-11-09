@@ -1,69 +1,69 @@
-swarm
+@grammar swarm
  @keywords
   #!
   #setup
   testBlock
  @catchAllKeyword error
  @parser js ./SwarmProgram.js
-#setup
+@keyword #setup
  @parser js ./TestSetupNode.js
  @keywords
   async
   require
   static
   %%|
-terminal
-#! terminal
+@keyword terminal
+@keyword #! terminal
  @columns filepath any*
-require terminal
+@keyword require terminal
  @columns filepath
-async terminal
-static terminal
-testBlock
+@keyword async terminal
+@keyword static terminal
+@keyword testBlock
  @columns any*
  @parser js ./TestBlock.js
  @keywords
   #setup
  @catchAllKeyword commandNode
-commandNode
+@keyword commandNode
  @parser js ./CommandNode.js
  @columns any*
  @catchAllKeyword commandNode
  @keywords
   %|
   assertion
-#test testBlock
-+#test testBlock
+@keyword #test testBlock
+@keyword +#test testBlock
  @parser js ./SoloTestBlock.js
--#test testBlock
+@keyword -#test testBlock
  @parser js ./SkippedTestBlock.js
-error
+@keyword error
  @parser js ErrorNode
-assertion
-=~ assertion
+@keyword assertion
+@keyword =~ assertion
  @columns any
  @parser js ./AssertTypeOfNode.js
-=# assertion
+@keyword =# assertion
  @columns int
  @parser js ./AssertLengthNode.js
-== assertion
+@keyword == assertion
  @columns any*
  @parser js ./AssertEqualNode.js
-=| assertion
+@keyword =| assertion
  @catchAllKeyword any
  @parser js ./AssertEqualBlockNode.js
-=+ assertion
+@keyword =+ assertion
  @columns any*
  @parser js ./AssertIncludesNode.js
-=- assertion
+@keyword =- assertion
  @columns any*
  @parser js ./AssertDoesNotIncludeNode.js
-any
+@keyword any
  @columns any*
  @catchAllKeyword any
-%%|
+@keyword %%|
  @parser js ./SetupConstructorArgNode.js
  @catchAllKeyword any
-%|
+@keyword %|
  @parser js ./CommandArgNode.js
  @catchAllKeyword any
