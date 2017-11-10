@@ -5,6 +5,12 @@
   testBlock
  @catchAllKeyword error
  @parser js ./SwarmProgram.js
+@wordType filepath
+ @regex .?
+@wordType any
+ @regex .?
+@wordType int
+ @regex ^\-?[0-9]+$
 @keyword #setup
  @parser js ./TestSetupNode.js
  @keywords
