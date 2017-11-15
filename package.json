@@ -10,13 +10,11 @@
     "type": "git",
     "url": "github.com/breck7/swarm"
   },
-  "keywords": [
-    "swarm"
-  ],
+  "keywords": ["swarm"],
   "author": "Breck Yunits",
   "license": "MIT",
   "dependencies": {
-    "otree": "^13.0.0",
+    "jtree": "^13.0.0",
     "tap": "^10.7.2"
   }
 }

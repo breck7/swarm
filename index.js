@@ -1,1 +1,1 @@
-module.exports = require("otree").getParser(__dirname + "/src/swarm.grammar")
+module.exports = require("jtree").getParser(__dirname + "/src/swarm.grammar")

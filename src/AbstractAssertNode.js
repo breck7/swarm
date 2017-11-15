@@ -1,6 +1,6 @@
-const otree = require("otree")
+const jtree = require("jtree")
 
-class AbstractAssertNode extends otree.NonTerminalNode {
+class AbstractAssertNode extends jtree.NonTerminalNode {
   async execute(dummy) {
     const finalParts = AbstractAssertNode._getMethodFromDotPath(dummy, this.getWord(1))
     const subject = finalParts[0]
@@ -41,9 +41,9 @@ class AbstractAssertNode extends otree.NonTerminalNode {
   async executeSync(result) {
     const expected = this.getSyncExpected()
     const actual = this.parseActual(result)
-    if (actual === undefined) debugger
-    const actualAsString = actual.toString()
-    const isPassed = actualAsString === expected
+    const actualIsUndefined = actual === undefined
+    const actualAsString = actualIsUndefined ? "undefined" : actual.toString()
+    const isPassed = actualIsUndefined ? false : actualAsString === expected
     if (!isPassed) {
       this.printFailureMessage(result)
       debugger

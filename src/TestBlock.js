@@ -1,9 +1,9 @@
 const tap = require("tap")
-const otree = require("otree")
+const jtree = require("jtree")
 
 const SwarmConstants = require("./SwarmConstants.js")
 
-class TestBlock extends otree.NonTerminalNode {
+class TestBlock extends jtree.NonTerminalNode {
   getTestSetupNode() {
     return this.getNode(SwarmConstants.setup) || this.getParent().getTestSetupNode()
   }

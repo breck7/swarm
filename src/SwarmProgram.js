@@ -1,12 +1,12 @@
 const fs = require("fs")
-const otree = require("otree")
+const jtree = require("jtree")
 
 const TestSetupNode = require("./TestSetupNode.js")
 const TestBlock = require("./TestBlock.js")
 const SkippedTestBlock = require("./SkippedTestBlock.js")
 const SoloTestBlock = require("./SoloTestBlock.js")
 
-class SwarmProgram extends otree.program {
+class SwarmProgram extends jtree.program {
   getCommandParent(testDummy) {
     return testDummy
   }

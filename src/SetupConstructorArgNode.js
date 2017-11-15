@@ -1,6 +1,6 @@
-const otree = require("otree")
+const jtree = require("jtree")
 
-class SetupConstructorArgNode extends otree.NonTerminalNode {
+class SetupConstructorArgNode extends jtree.NonTerminalNode {
   executeSync() {}
 }
 

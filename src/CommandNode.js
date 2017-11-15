@@ -1,8 +1,8 @@
-const otree = require("otree")
+const jtree = require("jtree")
 
 const CommandArgNode = require("./CommandArgNode.js")
 
-class CommandNode extends otree.NonTerminalNode {
+class CommandNode extends jtree.NonTerminalNode {
   getTestBlock() {
     return this.getParent()
   }

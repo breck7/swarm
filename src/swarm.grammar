@@ -33,6 +33,7 @@
  @catchAllKeyword commandNode
 @keyword commandNode
  @parser js ./CommandNode.js
+ @description Input is an object, and calls some method with an optional array of args
  @columns any*
  @catchAllKeyword commandNode
  @keywords
@@ -50,9 +51,11 @@
  @columns any
  @parser js ./AssertTypeOfNode.js
 @keyword =# assertion
+ @description Intake is an array, and checks if the length of array matches expected.
  @columns int
  @parser js ./AssertLengthNode.js
 @keyword == assertion
+ @description Intake is anything with a toString method, and compares that to provided expected value.
  @columns any*
  @parser js ./AssertEqualNode.js
 @keyword =| assertion
