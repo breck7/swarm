@@ -30,8 +30,8 @@ class TestBlock extends jtree.NonTerminalNode {
     return this._equal
   }
 
-  _executeNode(filepath) {
-    const testDummy = this.getTestSetupNode().createTestDummy(filepath)
+  _executeNode(programFilepath) {
+    const testDummy = this.getTestSetupNode().createTestDummy(programFilepath)
     const isAsync = this.isAsync()
     const executeMethod = isAsync ? "execute" : "executeSync"
     return new Promise((resolve, reject) => {
@@ -76,8 +76,8 @@ class TestBlock extends jtree.NonTerminalNode {
     await Promise.all(promises)
   }
 
-  execute(filepath) {
-    return this.isNodeJs() ? this._executeNode(filepath) : this._executeBrowser()
+  execute(programFilepath) {
+    return this.isNodeJs() ? this._executeNode(programFilepath) : this._executeBrowser()
   }
 }
 

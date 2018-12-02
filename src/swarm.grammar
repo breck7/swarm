@@ -63,8 +63,10 @@
  @parser js ./AssertEqualBlockNode.js
 @keyword =+ assertion
  @columns any*
+ @description Converts the input to string and see if the string contains the provided arguments
  @parser js ./AssertIncludesNode.js
 @keyword =- assertion
+ @description Converts the input to string and ensure the string does NOT contain the provided arguments
  @columns any*
  @parser js ./AssertDoesNotIncludeNode.js
 @keyword any

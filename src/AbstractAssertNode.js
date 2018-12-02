@@ -56,7 +56,7 @@ class AbstractAssertNode extends jtree.NonTerminalNode {
   }
 
   getSyncExpected() {
-    return this.getBeam()
+    return this.getContent()
   }
 
   static _getMethodFromDotPath(context, str) {
