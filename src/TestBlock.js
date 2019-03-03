@@ -40,7 +40,7 @@ class TestBlock extends jtree.NonTerminalNode {
       tap.test(testName, async childTest => {
         this.setEqualMethod(childTest.equal)
 
-        const promises = this.getChildren().map(child => {
+        const promises = this.map(child => {
           const result = child[executeMethod](testDummy)
           return isAsync ? Promise.resolve(result) : result
         })
@@ -68,7 +68,7 @@ class TestBlock extends jtree.NonTerminalNode {
       else console.log("pass")
     })
 
-    const promises = this.getChildren().map(child => {
+    const promises = this.map(child => {
       const result = child[executeMethod](testDummy)
       return isAsync ? Promise.resolve(result) : result
     })

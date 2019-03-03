@@ -8,8 +8,7 @@ class AbstractAssertNode extends jtree.NonTerminalNode {
     const actual = subject[command]()
     const actualAsString = this.parseActual(actual).toString()
     const expected = this.getExpected()
-    const line = this.getLine()
-    const isPassed = this.getTestResult(actualAsString, expected, line)
+    const isPassed = this.getTestResult(actualAsString, expected, this.getLine())
     if (!isPassed) {
       this.printFailureMessage(actual)
       debugger
@@ -43,12 +42,11 @@ class AbstractAssertNode extends jtree.NonTerminalNode {
     const actual = this.parseActual(result)
     const actualIsUndefined = actual === undefined
     const actualAsString = actualIsUndefined ? "undefined" : actual.toString()
-    const isPassed = actualIsUndefined ? false : actualAsString === expected
+    const isPassed = this.getTestResult(actualAsString, expected, this.getLine())
     if (!isPassed) {
       this.printFailureMessage(result)
       debugger
     }
-    this.equal(actualAsString, expected)
   }
 
   getExpected() {

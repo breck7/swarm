@@ -8,8 +8,7 @@ class TestSetupNode extends jtree.NonTerminalNode {
     const requiredClass = this.getRequiredClass(programFilepath)
     const constructorArgNode = this.getChildrenByNodeType(SetupConstructorArgNode)[0]
     const param = constructorArgNode ? constructorArgNode.childrenToString() : undefined
-    const isStatic = this.has(SwarmConstants.static)
-    return isStatic ? requiredClass : new requiredClass(param)
+    return this.has(SwarmConstants.static) ? requiredClass : new requiredClass(param)
   }
 
   isNodeJs() {

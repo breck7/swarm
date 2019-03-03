@@ -31,7 +31,7 @@ class CommandNode extends jtree.NonTerminalNode {
 
   executeSync(dummy) {
     const newDummy = this._executeSwarmCommand(dummy)
-    this.getChildren().map(child => child.executeSync(newDummy))
+    this.map(child => child.executeSync(newDummy))
   }
 }
 

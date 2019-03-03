@@ -24,8 +24,10 @@
 @keyword require terminal
  @columns filepath
 @keyword async terminal
+ @description Set this in setup to test async methods.
 @keyword static terminal
-@keyword testBlock
+ @description Add this to setup node to import class directly without initiating it, for static method testing.
+@abstract testBlock
  @columns any*
  @parser js ./TestBlock.js
  @keywords
@@ -33,7 +35,7 @@
  @catchAllKeyword commandNode
 @keyword commandNode
  @parser js ./CommandNode.js
- @description Input is an object, and calls some method with an optional array of args
+ @description Input is an object, and calls some method with an optional array of string args.
  @columns any*
  @catchAllKeyword commandNode
  @keywords
@@ -46,8 +48,9 @@
  @parser js ./SkippedTestBlock.js
 @keyword error
  @parser js ErrorNode
-@keyword assertion
+@abstract assertion
 @keyword =~ assertion
+ @description Assert result is of a certain type.
  @columns any
  @parser js ./AssertTypeOfNode.js
 @keyword =# assertion

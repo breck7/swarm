@@ -12,8 +12,7 @@ class SwarmProgram extends jtree.program {
   }
 
   getTestSetupNode() {
-    const testSetupNode = this.getChildrenByNodeType(TestSetupNode)[0]
-    return testSetupNode
+    return this.getChildrenByNodeType(TestSetupNode)[0]
   }
 
   execute(filepath) {
